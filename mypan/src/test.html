@@ -1,0 +1,1375 @@
+<html lang="">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no"
+		/>
+		<link
+			rel="icon"
+			href="https://nd-static.bdstatic.com/m-static/wp-brand/favicon.ico"
+		/>
+		<title>My Pan-免费云盘丨文件共享软件丨超大容量丨存储安全</title>
+		<script>
+			window.localStorage.setItem("passLoginType", "qrcode");
+		</script>
+		<!--[if !IE]><!-->
+		<script src="https://staticiot.cdn.bcebos.com/union/badjs-sdk-min-2.0.0.js"></script>
+		<script>
+			window.BadJs &&
+				(window.BadSDK = new BadJs({
+					host: "https://pan.baidu.com",
+					path: "/bpapi/analytics",
+					namespace: "netdisk_web_v20main",
+					productId: "100720",
+					rules: {
+						path: true,
+						hash: /(\/\w+)+/,
+					},
+					clienttype: 0,
+					promiseError: false,
+					vueError: true,
+					env: window,
+					downgrade: {
+						error: {
+							p2: [/Script error/, /chrome-extension/],
+						},
+						resource: {
+							p2: [/hm.baidu.com/, /webpush.pan.baidu.com/],
+						},
+					},
+				}));
+		</script>
+		<!--<![endif]-->
+		<style>
+			#page {
+				box-sizing: border-box;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 200;
+				background: #fff;
+				display: none;
+				overflow: scroll;
+			}
+
+			#page {
+				height: 100%;
+			}
+
+			a {
+				text-decoration: none;
+				cursor: pointer;
+			}
+
+			#main-content {
+				max-width: 1068px;
+				width: 1068px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin: -178px 0 0 -534px;
+			}
+
+			#main-content.gt-four-browsers {
+				margin-top: -254px;
+			}
+
+			#art {
+				display: inline-block;
+				float: left;
+			}
+
+			#browsers {
+				display: inline-block;
+				margin-left: 48px;
+				max-width: 592px;
+				width: 592px;
+				float: left;
+				margin-bottom: 16px;
+			}
+
+			#browsers p {
+				margin-bottom: 24px;
+				line-height: 21px;
+			}
+
+			.browser_not_supported-tip {
+				margin-top: 100px;
+				float: left;
+			}
+
+			.browsers-list {
+				height: 141px;
+				float: left;
+				margin-bottom: 16px;
+			}
+
+			.browser {
+				width: 136px;
+				margin: 0 16px 16px 0;
+				background: #f3f3f3;
+				border-radius: 4px;
+				float: left;
+			}
+
+			.browser a {
+				display: block;
+				width: 104px;
+				margin: 16px 16px;
+				color: #0d0d0d;
+				box-sizing: content-box;
+				text-align: center;
+			}
+
+			.browser a:visited {
+				color: #0d0d0d;
+			}
+
+			.browser h3 {
+				font-size: 14px;
+				font-weight: 500;
+				line-height: 16px;
+				text-align: center;
+			}
+
+			@media (max-width: 1127px) {
+				#main-content {
+					max-width: 1030px;
+				}
+
+				#art {
+					width: 390px;
+					height: 260px;
+				}
+			}
+
+			@media (max-width: 1069px) {
+				#main-content {
+					position: relative;
+					top: inherit;
+					left: inherit;
+					margin: 0 auto;
+					max-width: 640px;
+					text-align: center;
+				}
+
+				#main-content.gt-four-browsers {
+					margin-top: 0;
+				}
+
+				#browsers {
+					margin-bottom: 24px;
+					margin-left: 0;
+				}
+			}
+
+			@media (max-width: 647px) {
+				#main-content {
+					margin: 16px auto;
+					max-width: 440px;
+				}
+
+				#art {
+					width: 360px;
+					height: 240px;
+				}
+
+				.browsers-list {
+					margin-right: -16px;
+					text-align: left;
+				}
+			}
+
+			@media (max-width: 491px) {
+				#main-content {
+					max-width: 288px;
+				}
+
+				h1 {
+					font-size: 32px;
+					line-height: 40px;
+				}
+
+				#art {
+					width: 300px;
+					height: 200px;
+				}
+			}
+		</style>
+		<!--[if lte IE 8]>
+			<style>
+				#page {
+					display: block;
+				}
+			</style>
+			<script type="text/javascript">
+				var img = new Image();
+				var commonSrc =
+					"/api/analytics?clienttype=0&version=v20&type=web_brand_login_";
+				img.src = commonSrc + "no_support";
+			</script>
+		<![endif]-->
+		<link
+			href="https://nd-static.bdstatic.com/m-static/wp-brand/css/chunk-common.d54046af.css"
+			rel="preload"
+			as="style"
+		/>
+		<link
+			href="https://nd-static.bdstatic.com/m-static/wp-brand/css/chunk-vendors.7ca53e91.css"
+			rel="preload"
+			as="style"
+		/>
+		<link
+			href="https://nd-static.bdstatic.com/m-static/wp-brand/css/login.85ea6589.css"
+			rel="preload"
+			as="style"
+		/>
+		<link
+			href="https://nd-static.bdstatic.com/m-static/wp-brand/js/chunk-common.4fc73df0.js"
+			rel="preload"
+			as="script"
+		/>
+		<link
+			href="https://nd-static.bdstatic.com/m-static/wp-brand/js/chunk-vendors.79f7c213.js"
+			rel="preload"
+			as="script"
+		/>
+		<link
+			href="https://nd-static.bdstatic.com/m-static/wp-brand/js/login.ee9caf6a.js"
+			rel="preload"
+			as="script"
+		/>
+		<link
+			href="https://nd-static.bdstatic.com/m-static/wp-brand/css/chunk-vendors.7ca53e91.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://nd-static.bdstatic.com/m-static/wp-brand/css/chunk-common.d54046af.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://nd-static.bdstatic.com/m-static/wp-brand/css/login.85ea6589.css"
+			rel="stylesheet"
+		/>
+		<style data-id="immersive-translate-input-injected-css">
+			.immersive-translate-input {
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				bottom: 0;
+				z-index: 2147483647;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.immersive-translate-loading-spinner {
+				vertical-align: middle !important;
+				width: 10px !important;
+				height: 10px !important;
+				display: inline-block !important;
+				margin: 0 4px !important;
+				border: 2px rgba(221, 244, 255, 0.6) solid !important;
+				border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+				border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+				border-radius: 50% !important;
+				padding: 0 !important;
+				-webkit-animation: immersive-translate-loading-animation 0.6s infinite
+					linear !important;
+				animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+			}
+
+			@-webkit-keyframes immersive-translate-loading-animation {
+				from {
+					-webkit-transform: rotate(0deg);
+				}
+
+				to {
+					-webkit-transform: rotate(359deg);
+				}
+			}
+
+			@keyframes immersive-translate-loading-animation {
+				from {
+					transform: rotate(0deg);
+				}
+
+				to {
+					transform: rotate(359deg);
+				}
+			}
+
+			.immersive-translate-input-loading {
+				--loading-color: #f78fb6;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				display: block;
+				margin: 12px auto;
+				position: relative;
+				color: white;
+				left: -100px;
+				box-sizing: border-box;
+				animation: immersiveTranslateShadowRolling 1.5s linear infinite;
+			}
+
+			@keyframes immersiveTranslateShadowRolling {
+				0% {
+					box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0),
+						0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+				}
+
+				12% {
+					box-shadow: 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0),
+						0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+				}
+
+				25% {
+					box-shadow: 110px 0 var(--loading-color), 100px 0 var(--loading-color),
+						0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+				}
+
+				36% {
+					box-shadow: 120px 0 var(--loading-color), 110px 0 var(--loading-color),
+						100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0);
+				}
+
+				50% {
+					box-shadow: 130px 0 var(--loading-color), 120px 0 var(--loading-color),
+						110px 0 var(--loading-color), 100px 0 var(--loading-color);
+				}
+
+				62% {
+					box-shadow: 200px 0 rgba(255, 255, 255, 0),
+						130px 0 var(--loading-color), 120px 0 var(--loading-color),
+						110px 0 var(--loading-color);
+				}
+
+				75% {
+					box-shadow: 200px 0 rgba(255, 255, 255, 0),
+						200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color),
+						120px 0 var(--loading-color);
+				}
+
+				87% {
+					box-shadow: 200px 0 rgba(255, 255, 255, 0),
+						200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+						130px 0 var(--loading-color);
+				}
+
+				100% {
+					box-shadow: 200px 0 rgba(255, 255, 255, 0),
+						200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+						200px 0 rgba(255, 255, 255, 0);
+				}
+			}
+
+			.immersive-translate-search-recomend {
+				border: 1px solid #dadce0;
+				border-radius: 8px;
+				padding: 16px;
+				margin-bottom: 16px;
+				position: relative;
+				font-size: 16px;
+			}
+
+			.immersive-translate-search-enhancement-en-title {
+				color: #4d5156;
+			}
+
+			/* dark */
+			@media (prefers-color-scheme: dark) {
+				.immersive-translate-search-recomend {
+					border: 1px solid #3c4043;
+				}
+
+				.immersive-translate-close-action svg {
+					fill: #bdc1c6;
+				}
+
+				.immersive-translate-search-enhancement-en-title {
+					color: #bdc1c6;
+				}
+			}
+
+			.immersive-translate-search-settings {
+				position: absolute;
+				top: 16px;
+				right: 16px;
+				cursor: pointer;
+			}
+
+			.immersive-translate-search-recomend::before {
+				/* content: " "; */
+				/* width: 20px; */
+				/* height: 20px; */
+				/* top: 16px; */
+				/* position: absolute; */
+				/* background: center / contain url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAxlBMVEUAAADpTInqTIjpSofnSIfqS4nfS4XqS4nqTIjsTYnrTInqTIroS4jvQIDqTIn////+/v7rSYjpTIn8/v7uaZzrTIr9/f3wfansWJL88/b85e73qc39+/v3xNnylrvrVI/98fb62Obva5/8+fr76vH4y9zpSIj74e353Oj1ocTzm77xhK/veKbtYpjsXJTqU47oTInxjrXyh7L99fj40eH2ttH1udD3sc31ssz1rMnykLXucqPtbqD85e/1xdn2u9DzqcXrUY6FaJb8AAAADnRSTlMA34BgIM8Q37/fz7+/EGOHcVQAAAGhSURBVDjLhZPncuowEEZFTW7bXVU7xsYYTO/p7bb3f6lICIOYJOT4h7/VnFmvrBFjrF3/CR/SajBHswafctG0Qg3O8O0Xa8BZ6uw7eLjqr30SofCDVSkemMinfL1ecy20r5ygR5zz3ArcAqJExPTPKhDENEmS30Q9+yo4lEQkqVTiIEAHCT10xWERRdH0Bq0aCOPZNDV3s0xaYce1lHEoDHU8wEh3qRJypNcTAeKUIjgKMeGLDoRCLVLTVf+Ownj8Kk6H9HM6QXPgYjQSB0F00EJEu10ILQrs/QeP77BSSr0MzLOyuJJQbnUoOOIUI/A8EeJk9E4YUHUWiRyTVKGgQUB8/3e/NpdGlfI+FMQyWsCBWyz4A/ZyHXyiiz0Ne5aGZssoxRmcChw8/EFKQ5JwwkUo3FRT5yXS7q+Y/rHDZmFktzpGMvO+5QofA4FPpEmGw+EWRCFvnaof7Zhe8NuYSLR0xErKLThUSs8gnODh87ssy6438yzbLzxl012HS19vfCf3CNhnbWOL1eEsDda+gDPUvri8tSZzNFrwIZf1NmNvqC1I/t8j7nYAAAAASUVORK5CYII='); */
+			}
+
+			.immersive-translate-search-title {
+			}
+
+			.immersive-translate-search-title-wrapper {
+			}
+
+			.immersive-translate-search-time {
+				font-size: 12px;
+				margin: 4px 0 24px;
+				color: #70757a;
+			}
+
+			.immersive-translate-expand-items {
+				display: none;
+			}
+
+			.immersive-translate-search-more {
+				margin-top: 16px;
+				font-size: 14px;
+			}
+
+			.immersive-translate-modal {
+				display: none;
+				position: fixed;
+				z-index: 2147483647;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				background-color: rgb(0, 0, 0);
+				background-color: rgba(0, 0, 0, 0.4);
+				font-size: 15px;
+			}
+
+			.immersive-translate-modal-content {
+				background-color: #fefefe;
+				margin: 10% auto;
+				padding: 40px 24px 24px;
+				border: 1px solid #888;
+				border-radius: 10px;
+				width: 80%;
+				max-width: 270px;
+				font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+					"Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji",
+					"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+				position: relative;
+			}
+
+			.immersive-translate-modal .immersive-translate-modal-content-in-input {
+				max-width: 500px;
+			}
+			.immersive-translate-modal-content-in-input
+				.immersive-translate-modal-body {
+				text-align: left;
+				max-height: unset;
+			}
+
+			.immersive-translate-modal-title {
+				text-align: center;
+				font-size: 16px;
+				font-weight: 700;
+				color: #333333;
+			}
+
+			.immersive-translate-modal-body {
+				text-align: center;
+				font-size: 14px;
+				font-weight: 400;
+				color: #333333;
+				word-break: break-all;
+				margin-top: 24px;
+			}
+
+			@media screen and (max-width: 768px) {
+				.immersive-translate-modal-body {
+					max-height: 250px;
+					overflow-y: auto;
+				}
+			}
+
+			.immersive-translate-close {
+				color: #666666;
+				position: absolute;
+				right: 16px;
+				top: 16px;
+				font-size: 20px;
+				font-weight: bold;
+			}
+
+			.immersive-translate-close:hover,
+			.immersive-translate-close:focus {
+				color: black;
+				text-decoration: none;
+				cursor: pointer;
+			}
+
+			.immersive-translate-modal-footer {
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+				margin-top: 24px;
+			}
+
+			.immersive-translate-btn {
+				width: fit-content;
+				color: #fff;
+				background-color: #ea4c89;
+				border: none;
+				font-size: 16px;
+				margin: 0 8px;
+				padding: 9px 30px;
+				border-radius: 5px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				transition: background-color 0.3s ease;
+			}
+
+			.immersive-translate-btn:hover {
+				background-color: #f082ac;
+			}
+
+			.immersive-translate-cancel-btn {
+				/* gray color */
+				background-color: rgb(89, 107, 120);
+			}
+
+			.immersive-translate-cancel-btn:hover {
+				background-color: hsl(205, 20%, 32%);
+			}
+
+			.immersive-translate-action-btn {
+				background-color: transparent;
+				color: #ea4c89;
+				border: 1px solid #ea4c89;
+			}
+
+			.immersive-translate-btn svg {
+				margin-right: 5px;
+			}
+
+			.immersive-translate-link {
+				cursor: pointer;
+				user-select: none;
+				-webkit-user-drag: none;
+				text-decoration: none;
+				color: #007bff;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+			}
+
+			.immersive-translate-primary-link {
+				cursor: pointer;
+				user-select: none;
+				-webkit-user-drag: none;
+				text-decoration: none;
+				color: #ea4c89;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+			}
+
+			.immersive-translate-modal input[type="radio"] {
+				margin: 0 6px;
+				cursor: pointer;
+			}
+
+			.immersive-translate-modal label {
+				cursor: pointer;
+			}
+
+			.immersive-translate-close-action {
+				position: absolute;
+				top: 2px;
+				right: 0px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<section
+			data-v-51e08435=""
+			class="u-container bd-login-container is-vertical"
+		>
+			<main data-v-51e08435="" class="u-main">
+				<div class="bd-login">
+					<section class="u-container bd-first-screen is-vertical">
+						<header class="u-header fixed" style="height: 56px"></header>
+						<main class="u-main bd-first-screen__main">
+							<div class="bd-first-screen__main-content">
+								<div class="bd-login-content">
+									<div class="bd-login-content__wrapper">
+										<div class="bd-login-content__title">记录每一份热爱</div>
+										<div class="bd-login-content__title">让美好永远陪伴</div>
+									</div>
+									<div class="bd-login-content__wrapper">
+										<div class="bd-login-content__subtitle">
+											为你电脑/手机中的文件提供云备份、预览、分享等服务，帮你更便捷安全地管理数据。
+										</div>
+									</div>
+									<div class="bd-login-button bd-login-content__login">
+										<button
+											type="button"
+											class="u-button bd-login-button__wrapper u-button--primary"
+										>
+											<span> 去登录 </span>
+										</button>
+									</div>
+								</div>
+								<div class="bd-login-banner-image"></div>
+							</div>
+						</main>
+					</section>
+					<div class="bd-info-content">
+						<div class="bd-introduction-item">
+							<div class="bd-introduction-item__intro">
+								<div class="bd-introduction-item__intro-title">数据管理</div>
+								<div class="bd-introduction-item__intro-subtitle">
+									不止存储，数据管理更便捷
+								</div>
+								<div
+									class="bd-introduction-item__intro-carousel u-carousel u-carousel--vertical vertical_outside"
+								>
+									<div class="u-carousel__container" style="height: 380px">
+										<!----><!---->
+										<div
+											class="u-carousel__item bd-introduction-item__intro-carousel--content is-active is-animating"
+											style="transform: translateY(0px) scale(1)"
+										>
+											<!---->
+											<div
+												class="bd-introduction-item__intro-carousel--content-item"
+											>
+												<div data-v-98b59826="" class="bd-text-area">
+													<div data-v-98b59826="" class="bd-text-area__top">
+														<div
+															data-v-98b59826=""
+															class="bd-text-area__top--title"
+														>
+															智能搜索，盘中文件一搜即有
+														</div>
+														<div
+															data-v-98b59826=""
+															class="bd-text-area__top--subtitle"
+														>
+															支持智能标题搜索、图片类型搜索、图片内文字搜索，轻轻松松搜你想要
+														</div>
+													</div>
+													<!---->
+													<div data-v-98b59826="" class="bd-text-area__bottom">
+														<!----><!---->
+													</div>
+												</div>
+												<div
+													data-v-7334197c=""
+													class="bd-image-area"
+													config="[object Object]"
+												>
+													<div
+														data-v-7334197c=""
+														class="bd-image-area__image"
+														style="
+															background-image: url('https://nd-static.bdstatic.com/m-static/wp-brand/img/search.76ec7250.png');
+														"
+													></div>
+												</div>
+											</div>
+										</div>
+										<div
+											class="u-carousel__item bd-introduction-item__intro-carousel--content"
+											style="transform: translateY(380px) scale(1)"
+										>
+											<!---->
+											<div
+												class="bd-introduction-item__intro-carousel--content-item"
+											>
+												<div data-v-98b59826="" class="bd-text-area">
+													<div data-v-98b59826="" class="bd-text-area__top">
+														<div
+															data-v-98b59826=""
+															class="bd-text-area__top--title"
+														>
+															智能扫描，快速扫描纸质文件
+														</div>
+														<div
+															data-v-98b59826=""
+															class="bd-text-area__top--subtitle"
+														>
+															图片文字精准提取（OCR），试卷扫描擦除手写，文件、名片、书刊、证件皆可扫描，实现纸质资料备份、查找与管理
+														</div>
+													</div>
+													<!---->
+													<div data-v-98b59826="" class="bd-text-area__bottom">
+														<!----><button
+															data-v-98b59826=""
+															type="button"
+															class="u-button bd-text-area__bottom--link u-button--text"
+														>
+															<!----><!----><span
+																>点击查看更多<i
+																	data-v-98b59826=""
+																	class="u-icon-arrow-right"
+																></i
+															></span>
+														</button>
+													</div>
+												</div>
+												<div
+													data-v-7334197c=""
+													class="bd-image-area"
+													config="[object Object]"
+												>
+													<div
+														data-v-7334197c=""
+														class="bd-image-area__image"
+														style="
+															background-image: url('https://nd-static.bdstatic.com/m-static/wp-brand/img/ocr.1375d647.png');
+														"
+													></div>
+												</div>
+											</div>
+										</div>
+										<div
+											class="u-carousel__item bd-introduction-item__intro-carousel--content"
+											style="transform: translateY(-760px) scale(1)"
+										>
+											<!---->
+											<div
+												class="bd-introduction-item__intro-carousel--content-item"
+											>
+												<div data-v-98b59826="" class="bd-text-area">
+													<div data-v-98b59826="" class="bd-text-area__top">
+														<div
+															data-v-98b59826=""
+															class="bd-text-area__top--title"
+														>
+															智能相册，
+														</div>
+														<div
+															data-v-98b59826=""
+															class="bd-text-area__top--title"
+														>
+															串联生活点滴中的小确幸
+														</div>
+														<div
+															data-v-98b59826=""
+															class="bd-text-area__top--subtitle"
+														>
+															智能分类让相册整理更加轻松，智能故事视频点亮回忆瞬间，智能配文让盘中相册会说话
+														</div>
+													</div>
+													<!---->
+													<div data-v-98b59826="" class="bd-text-area__bottom">
+														<!----><!---->
+													</div>
+												</div>
+												<div
+													data-v-7334197c=""
+													class="bd-image-area"
+													config="[object Object]"
+												>
+													<div
+														data-v-7334197c=""
+														class="bd-image-area__image"
+														style="
+															background-image: url('https://nd-static.bdstatic.com/m-static/wp-brand/img/photo.dd6fc760.png');
+														"
+													></div>
+												</div>
+											</div>
+										</div>
+										<div
+											class="u-carousel__item bd-introduction-item__intro-carousel--content is-animating"
+											style="transform: translateY(-380px) scale(1)"
+										>
+											<!---->
+											<div
+												class="bd-introduction-item__intro-carousel--content-item"
+											>
+												<div data-v-98b59826="" class="bd-text-area">
+													<div data-v-98b59826="" class="bd-text-area__top">
+														<div
+															data-v-98b59826=""
+															class="bd-text-area__top--title"
+														>
+															同步空间，文件实时同步
+														</div>
+														<div
+															data-v-98b59826=""
+															class="bd-text-area__top--subtitle"
+														>
+															空间文件多端自动同步，历史版本恢复无忧，随时随地高效办公
+														</div>
+													</div>
+													<!---->
+													<div data-v-98b59826="" class="bd-text-area__bottom">
+														<!----><button
+															data-v-98b59826=""
+															type="button"
+															class="u-button bd-text-area__bottom--link u-button--text"
+														>
+															<!----><!----><span
+																>点击查看更多<i
+																	data-v-98b59826=""
+																	class="u-icon-arrow-right"
+																></i
+															></span>
+														</button>
+													</div>
+												</div>
+												<div
+													data-v-7334197c=""
+													class="bd-image-area"
+													config="[object Object]"
+												>
+													<div
+														data-v-7334197c=""
+														class="bd-image-area__image"
+														style="
+															background-image: url('https://nd-static.bdstatic.com/m-static/wp-brand/img/sync.57eadcb5.png');
+														"
+													></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<ul
+										class="u-carousel__indicators u-carousel__indicators--vertical u-carousel__indicators--outside"
+									>
+										<li
+											class="u-carousel__indicator u-carousel__indicator--vertical is-active"
+										>
+											<button class="u-carousel__button"><!----></button>
+										</li>
+										<li
+											class="u-carousel__indicator u-carousel__indicator--vertical"
+										>
+											<button class="u-carousel__button"><!----></button>
+										</li>
+										<li
+											class="u-carousel__indicator u-carousel__indicator--vertical"
+										>
+											<button class="u-carousel__button"><!----></button>
+										</li>
+										<li
+											class="u-carousel__indicator u-carousel__indicator--vertical"
+										>
+											<button class="u-carousel__button"><!----></button>
+										</li>
+									</ul>
+								</div>
+								<!---->
+							</div>
+						</div>
+						<div class="bd-introduction-item">
+							<div class="bd-introduction-item__intro">
+								<div class="bd-introduction-item__intro-title">
+									数据安全及隐私保护
+								</div>
+								<div class="bd-introduction-item__intro-subtitle"></div>
+								<div
+									class="bd-introduction-item__intro-carousel u-carousel u-carousel--vertical"
+								>
+									<div class="u-carousel__container" style="height: 380px">
+										<!----><!---->
+										<div
+											class="u-carousel__item bd-introduction-item__intro-carousel--content is-active is-animating"
+											style="transform: translateY(0px) scale(1)"
+										>
+											<!---->
+											<div
+												class="bd-introduction-item__intro-carousel--content-item"
+											>
+												<div
+													data-v-7334197c=""
+													class="bd-image-area"
+													config="[object Object]"
+												>
+													<div
+														data-v-7334197c=""
+														class="bd-image-area__image"
+														style="
+															background-image: url('https://nd-static.bdstatic.com/m-static/wp-brand/img/data_security.55b7de30.png');
+														"
+													></div>
+												</div>
+												<div data-v-98b59826="" class="bd-text-area">
+													<div data-v-98b59826="" class="bd-text-area__top">
+														<div
+															data-v-98b59826=""
+															class="bd-text-area__top--title"
+														>
+															数据安全保护
+														</div>
+														<div
+															data-v-98b59826=""
+															class="bd-text-area__top--title"
+														>
+															百度网盘全力守护盘中资料
+														</div>
+														<div
+															data-v-98b59826=""
+															class="bd-text-area__top--subtitle"
+														>
+															十年持续稳定服务，ISO三项权威认证，保护文件隐私安全
+														</div>
+													</div>
+													<div
+														data-v-98b59826=""
+														class="bd-text-area__agreement"
+													>
+														<div
+															data-v-98b59826=""
+															class="bd-text-area__agreement--text"
+														>
+															查看百度网盘隐私保护白皮书
+														</div>
+														<img
+															data-v-98b59826=""
+															src="https://staticsns.cdn.bcebos.com/amis/2024-2/1707188943687/right-arrow.png"
+															alt=""
+															class="bd-text-area__agreement--icon"
+														/>
+													</div>
+													<div data-v-98b59826="" class="bd-text-area__bottom">
+														<!----><!---->
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!---->
+								</div>
+								<!---->
+							</div>
+						</div>
+					</div>
+					<div class="bd-login__download">
+						<div data-v-225e76d2="" class="bd-base-download">
+							<div data-v-225e76d2="" class="bd-base-download__content">
+								<div
+									data-v-796b91d5=""
+									data-v-225e76d2=""
+									class="bd-download-item__content-block"
+								>
+									<span data-v-796b91d5=""
+										><span class="u-popover__reference-wrapper"
+											><div
+												data-v-796b91d5=""
+												class="u-card bd-download-item__content-block-card is-always-shadow u-popover__reference"
+												aria-describedby="u-popover-2297"
+												tabindex="0"
+											>
+												<!---->
+												<div class="u-card__body" style="padding: 8px">
+													<div
+														data-v-796b91d5=""
+														class="bd-download-item__content-block-card--container"
+														style="
+															background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAAAP1BMVEUAAABIUmVIUGhJU2dJU2ZJU2VIUmVGUGhJU2ZIU2ZJU2VJU2ZIUmVIU2ZJUmZJU2ZKVWVIU2ZJUWVFUGVJU2bf5kbaAAAAFHRSTlMAYCC/3+9AEKCAkG9QX8+vMN+QMHvqTOwAAADsSURBVFjD7djZCoMwEIXhk8nqVm2b93/WIki1GDsZb7ow/6WRj4ASyEDbFntTU091HNlcm6Uaz+X6XIWYsiTLepRl3TkwCEHDgUZBBb8AJPOsGcUgqychyNecAmOX7L40zGvtCbDzb0676BlQ9F1dBBox6PJxN6BnQNkB6AFiQOGfTAoqqKCCvwpCQQUVVFBBBRX8EOivRdA3wbgzYBtBrgAOAMIJ0O+uVkBc3Fku1O/AuFm9zA+mvGYXPxxOxQi72s0O5+Xu9fW0XHTpUvJaZsDnAm2vs926Ly+Z9hmbC/lxAqLLx9kBmvbnPQBgihyJpbAcjwAAAABJRU5ErkJggg==');
+														"
+													></div>
+													<div
+														data-v-796b91d5=""
+														class="bd-download-item__content-block-card--description"
+													>
+														<div data-v-796b91d5="" class="title">
+															手机/平板App
+														</div>
+														<!---->
+													</div>
+												</div>
+											</div></span
+										></span
+									>
+								</div>
+								<div
+									data-v-796b91d5=""
+									data-v-225e76d2=""
+									class="bd-download-item__content-block"
+								>
+									<span data-v-796b91d5=""
+										><span class="u-popover__reference-wrapper"
+											><div
+												data-v-796b91d5=""
+												class="u-card bd-download-item__content-block-card is-always-shadow u-popover__reference"
+												aria-describedby="u-popover-1059"
+												tabindex="0"
+											>
+												<!---->
+												<div class="u-card__body" style="padding: 8px">
+													<div
+														data-v-796b91d5=""
+														class="bd-download-item__content-block-card--container current"
+														style="
+															background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAAANlBMVEUAAABIUGhIUmZIU2dIUmVJU2dIU2VAUG1JU2ZJU2ZJUWdJU2VJUmZJUmNGUmVIU2ZJU2VJU2bBFsTOAAAAEXRSTlMAIIC/YJ9AEN+vkO/PUDDfb+pNkj4AAAC1SURBVFjD7dZLDsMgDEVRDMSEfEjY/2brZMIACVrcQaO+u4CjZzHBIPR2IaXvQJT8OcV5zdnpBtHu7eTmXHLDg5a4rcUZAOlaxN7el5U+A4nYCyFHyVUi2tzNtZHSEFghWjBLAAECBAgQIMDfAG2zYAzbbt48Kmp2fzC7hWe9MkCAAAECBPg/IO/eLpPbDi1YF6jgCrCNBzVYxzJ51YJ1xCyLozu0YF1IvJ/2mt0BFbOjQWi0F2Xe65+ArZbkAAAAAElFTkSuQmCC');
+														"
+													></div>
+													<div
+														data-v-796b91d5=""
+														class="bd-download-item__content-block-card--description"
+													>
+														<div data-v-796b91d5="" class="title">Windows</div>
+														<!---->
+													</div>
+												</div>
+											</div></span
+										></span
+									>
+								</div>
+								<div
+									data-v-796b91d5=""
+									data-v-225e76d2=""
+									class="bd-download-item__content-block"
+								>
+									<span data-v-796b91d5=""
+										><div
+											role="tooltip"
+											id="u-popover-7730"
+											aria-hidden="true"
+											class="u-popover u-popper"
+											tabindex="0"
+											style="width: 280px; display: none"
+										>
+											<!----><!---->
+											<div
+												data-v-796b91d5=""
+												class="bd-download-item__content-block-popover-link"
+											>
+												<div
+													data-v-796b91d5=""
+													class="bd-download-item__content-block-popover-link--item"
+												>
+													<div data-v-796b91d5="" class="title">
+														下载 Intel 芯片版
+													</div>
+												</div>
+												<div
+													data-v-796b91d5=""
+													class="bd-download-item__content-block-popover-link--item"
+												>
+													<div data-v-796b91d5="" class="title">
+														下载 Apple 芯片版
+													</div>
+												</div>
+											</div>
+										</div>
+										<span class="u-popover__reference-wrapper"
+											><div
+												data-v-796b91d5=""
+												class="u-card bd-download-item__content-block-card is-always-shadow u-popover__reference"
+												aria-describedby="u-popover-7730"
+												tabindex="0"
+											>
+												<!---->
+												<div class="u-card__body" style="padding: 8px">
+													<div
+														data-v-796b91d5=""
+														class="bd-download-item__content-block-card--container"
+														style="
+															background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAAARVBMVEUAAABJU2dIUGhEUGpJU2ZIUmZJU2ZJU2VIU2ZIU2RIUGhJU2ZJU2ZJUmVJUmZJU2VIU2ZIVGhIU2VJU2ZJUWdJUWVJU2YKwj2NAAAAFnRSTlMAvyAQ32Cg74BAQHCvUM+Q30Awb5CQOVWoKwAAAYlJREFUWMPt19FuwjAMBVA7aZw2bVpamP//U4cYYd2QZgz3bZzHSERx7NiUnlB6zpVgCutZIpDAerESRsr6ZSOIXhuCOGrDmPvTBpSTTpsuYC9Qe0jAuwNiKkZvAiGwNiMhROMC3QbjfG71mo/25jA5yS+GG8MuZJbjcF3eSinRu1eSS93NUuPd+kXmFB5vopL125TaboWz7nF57HSL/pKlxlhOWe9IIFPp1KFb7XQ6JauJetjzZVO/2ehR7v3+youo22JMDQ+79wjyfP4D2sNgVBd7GMzqJFaX91qtLu+UCXyFk7HhB6gGbyZwnyH+fxu67/CDCNsaGF02OaJ7w2j9HwLHHNWtWn/zvbpopRnbH0b1641L9FuAj8/+rOr1Kb0Rsx8bMbuJMaeQ45lfiBh3xBVcOZ017cGTgNF9O+QXUox4LguZZvdLRgY90ANGZ1+wLc6GbRPnSLGJ+xvKVTyHU9pCGKp0P+KN5JHaj3O/y+QguS2P5JX4cJhPd3VR5bw+HSO9vb097ROc7N24BWk8IwAAAABJRU5ErkJggg==');
+														"
+													></div>
+													<div
+														data-v-796b91d5=""
+														class="bd-download-item__content-block-card--description"
+													>
+														<div data-v-796b91d5="" class="title">macOS</div>
+														<!---->
+													</div>
+												</div>
+											</div></span
+										></span
+									>
+								</div>
+								<div
+									data-v-796b91d5=""
+									data-v-225e76d2=""
+									class="bd-download-item__content-block"
+								>
+									<span data-v-796b91d5=""
+										><div
+											role="tooltip"
+											id="u-popover-7352"
+											aria-hidden="true"
+											class="u-popover u-popper"
+											tabindex="0"
+											style="width: 280px; display: none"
+										>
+											<!----><!---->
+											<div
+												data-v-796b91d5=""
+												class="bd-download-item__content-block-popover-link"
+											>
+												<div
+													data-v-796b91d5=""
+													class="bd-download-item__content-block-popover-link--item"
+												>
+													<div data-v-796b91d5="" class="title">
+														下载 rpm 格式
+													</div>
+												</div>
+												<div
+													data-v-796b91d5=""
+													class="bd-download-item__content-block-popover-link--item"
+												>
+													<div data-v-796b91d5="" class="title">
+														下载 deb 格式
+													</div>
+												</div>
+											</div>
+										</div>
+										<span class="u-popover__reference-wrapper"
+											><div
+												data-v-796b91d5=""
+												class="u-card bd-download-item__content-block-card is-always-shadow u-popover__reference"
+												aria-describedby="u-popover-7352"
+												tabindex="0"
+											>
+												<!---->
+												<div class="u-card__body" style="padding: 8px">
+													<div
+														data-v-796b91d5=""
+														class="bd-download-item__content-block-card--container"
+														style="
+															background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAAASFBMVEUAAABIUGhJU2ZJU2VIU2ZIUmVJU2dIUmZAUHBJUmZJUGBIU2RJUWVIUmhJU2ZJUmZKUmZIUmVKVWVJUWdIVGZFU2VIU2VJU2beaGm5AAAAF3RSTlMAIN/voGC/gBBwEECQQK/Pf08wkIAwv+YnhjwAAAOSSURBVFjDpVjZgoMgDJQQLkGw9sj//+mqrPYAipW87NbKNGQmB3RHTBsMnIiCF7prN4b0NBib8QZObxb6NrwLfVpo2y9QYqoFECljrMFBypk7DyiygPw8oKesDacBQx7QnAakvPkWTjj8B+6mtfgXOTQAou7MCjItD2wjK5Zg0ZyaMfBNl+c99J1mXb8Syx6+31xkpwFVJ2csIOo7XNjt2wGXxJALIKz7bky+GYKT9FelEPkCOLUC8g7J6dVbTyQ60QgINI63nXN0F2gGBPvaXARvBYS3pay3rTEU4uXTNG4sX07iTaSYehZHsxdIc75D3Zlj8X8z/518DKI831Fg7IQyyixwenQam0osEAn2YP+M+Kvd94znik0sCn5B1COuwD1vcFHOC/uFDYde2f3hatCfa3kh43a06894GnIteN8ziV8Br4VQua0733/DG0vdyO6jHfspScrqkBui/H3qYgWyficGiy5EWn5NGEMEvEikIgL3kxrZDOYiJSUXpUw2XSkKWHQwdn7F85suRV1EWZRd5ONxpiHuKGqm7KKMLh50MNFM6qI96iLECG4OFl0c0iiWHZxBWS2RXJQOHqmCF6JQfctfYpHo61OrnF81VekHdihd3LIZRXSv/q7sIqCrD/5G1cdoiIDVEb5fi7EhX88m1R8Z4e0KaOsnRGbZRNEqwZ7N9VzU8Iy6aAF1QBXVr4ZqPZoNmeE1QIxK6O81LUQbp1oM1aF7AAH7sc+RrDRPj1DLpxHCBsjFdx0OfNrS4IsSgLkdMHydPhmIrUDwsZzHYm/OXCn88qYOt5eTt2Ql7bOtOcO0Mj4U4ETAN1lAHtGG/2ML3HQkUmbhRv4QL2yXxxfh4wL9/PVs9JxOhqw8okpohcxrePtcVuzkTiWLM5mf+NJD6RoJRaqj9C3q8zORzKkmfZROEBlGfeHqLAwZBkyyOuo92bSpbSaaTVoVmlyNcjovw9Tk53qlcorjLEOyy1Yp/PyFbIq7lJMBsokG4jM/+2zawphcyPJckXo8PgMji1dBQj/XYVZIA/JbJj/Lg4k3l2G4GOTZszJ78FgkDnnYmcrlob5GuEyw9BlAFh6seP0tUYlB57ogB4/oJU/uGxjcuqJpa64+cO7F60PAq2D7p8lar16/vXVVm4R8EqsR0yRjLzX04EnecxR3rZkBr1Oxbw3R7GKpGzMSiMDbbPqAGdgwQti+bTaLAQDzcH9pNF42T8NhLAAAAABJRU5ErkJggg==');
+														"
+													></div>
+													<div
+														data-v-796b91d5=""
+														class="bd-download-item__content-block-card--description"
+													>
+														<div data-v-796b91d5="" class="title">Linux</div>
+														<!---->
+													</div>
+												</div>
+											</div></span
+										></span
+									>
+								</div>
+								<div
+									data-v-796b91d5=""
+									data-v-225e76d2=""
+									class="bd-download-item__content-block"
+								>
+									<span data-v-796b91d5=""
+										><div
+											role="tooltip"
+											id="u-popover-2424"
+											aria-hidden="true"
+											class="u-popover u-popper"
+											tabindex="0"
+											style="width: 280px; display: none"
+										>
+											<!---->
+										</div>
+										<span class="u-popover__reference-wrapper"
+											><div
+												data-v-796b91d5=""
+												class="u-card bd-download-item__content-block-card is-always-shadow u-popover__reference"
+												aria-describedby="u-popover-2424"
+												tabindex="0"
+											>
+												<!---->
+												<div class="u-card__body" style="padding: 8px">
+													<div
+														data-v-796b91d5=""
+														class="bd-download-item__content-block-card--container"
+														style="
+															background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAAARVBMVEUAAABKU2dIUmdIUGhJU2dJU2VJU2ZIUmZJUmZHU2VJUmZJUWVQUGBJU2VIUmZAUHBAUGBIU2dKUmZJU2ZJU2ZIU2VJU2a9J2NnAAAAFnRSTlMAn0Agv+/fX88wcJAQoIAQEJ9/r29Pz9iunAAAAUxJREFUWMPt1stuwjAQheFTz/iWhAQozPs/aq3UYImGRexpRYX/pRefYk0cB70Xbbl8tDd6Qu5sRacz1ljUCkcAoyg2AlFUMzjogicEXdBBlOtgB98JDJEeige5N5IJO8GIn7lyXoHJ7gNpA5wl55HifeC8AU6SO1Y8oXAqAph4bUB5qBNSvmbKBgBlHylTlsGNoJj7Nh3ychs4IjXed3xoBu3xtueIlGsG5TaWkEfSApaxDOUlbALLWEQoLzaBZSzMeSSNYBmLR8qpgOKRu4oOyMh9qoDlm0aiBc5YG9RAizWnAZYFGKkGr3j4H80vYTUYCEueaDnQvukadY8feute5V7uYAc7+Mug1fUsWBdkeF3QA0HTcwDIKXoEVTEQvvNsFebLHr0/aDEbLajusj38MyojeZJBXfMzcEBdgzY42acntjIKWx5H9P5XX79EeaYtxBATAAAAAElFTkSuQmCC');
+														"
+													></div>
+													<div
+														data-v-796b91d5=""
+														class="bd-download-item__content-block-card--description"
+													>
+														<div data-v-796b91d5="" class="title">TV版</div>
+														<!---->
+													</div>
+												</div>
+											</div></span
+										></span
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</section>
+		<script src="https://nd-static.bdstatic.com/m-static/wp-brand/js/chunk-vendors.79f7c213.js"></script>
+		<script src="https://nd-static.bdstatic.com/m-static/wp-brand/js/chunk-common.4fc73df0.js"></script>
+		<script src="https://nd-static.bdstatic.com/m-static/wp-brand/js/login.ee9caf6a.js"></script>
+		<script
+			src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"
+			type="module"
+		></script>
+		<script
+			src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"
+			type="module"
+		></script>
+		<div
+			role="tooltip"
+			id="u-popover-7239"
+			aria-hidden="true"
+			class="u-popover u-popper bd-right-header__out-box--popover"
+			tabindex="0"
+			style="
+				width: 320px;
+				transform-origin: center top;
+				z-index: 2001;
+				display: none;
+			"
+		>
+			<!---->
+			<div class="bd-right-header__out-box--card">
+				<div class="bd-right-header__out-box--card-content">
+					<div class="bd-right-header__out-box--card-content-item">
+						<div
+							class="bd-right-header__out-box--card-content-item-image"
+							style="
+								background-image: url('https://nd-static.bdstatic.com/m-static/wp-brand/img/app.085f610f.png');
+							"
+						></div>
+						<div class="bd-right-header__out-box--card-content-item-title">
+							手机/平板App
+						</div>
+						<div class="bd-right-header__out-box--card-content-item-download">
+							手机扫码下载
+						</div>
+					</div>
+					<div class="bd-right-header__out-box--card-content-item">
+						<div class="bd-right-header__out-box--card-content-item-top">
+							<div
+								class="bd-right-header__out-box--card-content-item-top-image"
+								style="
+									background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAAANlBMVEUAAABIUGhIUmZIU2dIUmVJU2dIU2VAUG1JU2ZJU2ZJUWdJU2VJUmZJUmNGUmVIU2ZJU2VJU2bBFsTOAAAAEXRSTlMAIIC/YJ9AEN+vkO/PUDDfb+pNkj4AAAC1SURBVFjD7dZLDsMgDEVRDMSEfEjY/2brZMIACVrcQaO+u4CjZzHBIPR2IaXvQJT8OcV5zdnpBtHu7eTmXHLDg5a4rcUZAOlaxN7el5U+A4nYCyFHyVUi2tzNtZHSEFghWjBLAAECBAgQIMDfAG2zYAzbbt48Kmp2fzC7hWe9MkCAAAECBPg/IO/eLpPbDi1YF6jgCrCNBzVYxzJ51YJ1xCyLozu0YF1IvJ/2mt0BFbOjQWi0F2Xe65+ArZbkAAAAAElFTkSuQmCC');
+								"
+							></div>
+						</div>
+						<div class="bd-right-header__out-box--card-content-item-title">
+							Windows
+						</div>
+						<div class="bd-right-header__out-box--card-content-item-download">
+							下载 windows 版
+						</div>
+						<div class="bd-right-header__out-box--card-content-item-download">
+							从 Microsoft 获取
+						</div>
+					</div>
+				</div>
+				<div class="bd-right-header__out-box--card-btn">
+					<button
+						type="button"
+						class="u-button bd-right-header__out-box--card-btn-link u-button--text"
+					>
+						<!----><!----><span>
+							更多版本下载
+							<span class="u-uicon" style="color: rgb(6, 167, 255)"
+								><i class="u-uicon__font u-icon-arrow-right"></i></span
+						></span>
+					</button>
+				</div>
+			</div>
+			<div x-arrow="" class="popper__arrow" style="left: 147px"></div>
+		</div>
+		<div
+			role="tooltip"
+			id="u-popover-2297"
+			aria-hidden="true"
+			class="u-popover u-popper"
+			tabindex="0"
+			style="
+				width: 280px;
+				transform-origin: center bottom;
+				z-index: 2007;
+				display: none;
+			"
+		>
+			<!---->
+			<div data-v-796b91d5="">
+				<!---->
+				<div
+					data-v-796b91d5=""
+					class="bd-download-item__content-block-popover-qrcode"
+				>
+					<div
+						data-v-796b91d5=""
+						class="bd-download-item__content-block-popover-qrcode--item"
+					>
+						<div
+							data-v-796b91d5=""
+							class="qrcode"
+							style="
+								background-image: url('https://nd-static.bdstatic.com/m-static/wp-brand/img/wangpan_app.31d4e868.png');
+							"
+						></div>
+						<div data-v-796b91d5="" class="title">Android/iOS</div>
+					</div>
+					<div
+						data-v-796b91d5=""
+						class="bd-download-item__content-block-popover-qrcode--item"
+					>
+						<div
+							data-v-796b91d5=""
+							class="qrcode"
+							style="
+								background-image: url('https://nd-static.bdstatic.com/m-static/wp-brand/img/ipad.14d0c164.png');
+							"
+						></div>
+						<div data-v-796b91d5="" class="title">iPad</div>
+					</div>
+				</div>
+			</div>
+			<!---->
+			<div x-arrow="" class="popper__arrow" style="left: 139px"></div>
+		</div>
+		<div
+			role="tooltip"
+			id="u-popover-1059"
+			aria-hidden="true"
+			class="u-popover u-popper"
+			tabindex="0"
+			style="
+				width: 242px;
+				transform-origin: center bottom;
+				z-index: 2011;
+				display: none;
+			"
+		>
+			<!----><!---->
+			<div
+				data-v-796b91d5=""
+				class="bd-download-item__content-block-popover-link"
+			>
+				<div
+					data-v-796b91d5=""
+					class="bd-download-item__content-block-popover-link--item"
+				>
+					<div data-v-796b91d5="" class="title">下载 windows 版</div>
+				</div>
+				<div
+					data-v-796b91d5=""
+					class="bd-download-item__content-block-popover-link--item"
+				>
+					<div
+						data-v-796b91d5=""
+						class="bd-download-item__content-block-popover-link--micro"
+					>
+						<ms-store-badge
+							data-v-796b91d5=""
+							productid="XP9CXM3N2B06J1"
+							theme="light"
+							language="zh-cn"
+						></ms-store-badge>
+					</div>
+				</div>
+			</div>
+			<div x-arrow="" class="popper__arrow" style="left: 120px"></div>
+		</div>
+	</body>
+</html>
