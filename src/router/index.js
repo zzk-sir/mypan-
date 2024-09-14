@@ -80,7 +80,6 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
     const userToken = sessionStorage.getItem('authorization')
-    
     if(to.meta.needLogin!=null&&to.meta.needLogin&&userToken==null){
       router.push('/login')
     }
