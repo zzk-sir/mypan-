@@ -28,3 +28,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+#### 优化
+- 使用sha3算法来生成hash，解决md5生成hash会出现重复的问题
+

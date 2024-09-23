@@ -3,6 +3,14 @@
     <div class="uploader-title">
       <span>上传任务</span>
       <span class="tips">（仅展示本次上传任务）</span>
+      <el-button
+        type="danger"
+        @click="delAllUpload"
+        :disabled="filelist.length == 0"
+      >
+        <span class="iconfont icon-del m-right"></span>
+        清空
+      </el-button>
     </div>
     <div class="file-list">
       <div v-for="(item, index) in filelist" :key="index" class="file-item">
@@ -111,8 +119,8 @@
 
 <script setup>
 import { ref, reactive, getCurrentInstance,onMounted } from "vue";
-import SparkMD5 from "spark-md5";
-import { md5 } from "js-md5";
+// import SparkMD5 from "spark-md5";
+import jsSHA from "jssha";
 
 //================================================================globolVar
 const { proxy } = getCurrentInstance();
@@ -188,7 +196,8 @@ const computedMD5 = async (fileItem) => {
   // 当前分片
   let currentChunk = 0;
 
-  let spark = new SparkMD5.ArrayBuffer(); // 创建 SparkMD5 实例用于计算 MD5 值
+  // let spark = new SparkMD5.ArrayBuffer(); // 创建 SparkMD5 实例用于计算 MD5 值
+  let shaObj = new jsSHA("SHA3-256", "TEXT");
 
   let fileReader = new FileReader(); // 创建 FileReader 对象用于读取文件
   // 计算下一个分片
@@ -205,7 +214,8 @@ const computedMD5 = async (fileItem) => {
     resFile.md5Progress = 0;
     // 文件读取成功时触发
     fileReader.onload = (e) => {
-      spark.append(e.target.result); // 将读取的文件数据添加到 SparkMD5 实例中
+      //spark.append(e.target.result); // 将读取的文件数据添加到 SparkMD5 实例中
+      shaObj.update(new Int8Array(e.target.result).join(''))
       currentChunk++;
 
       // 如果还有分片未读取完
@@ -215,8 +225,9 @@ const computedMD5 = async (fileItem) => {
         loadNext(); // 加载下一个分片
       } else {
         // 所有分片都已读取完
-        let md5 = spark.end(); // 计算文件的 MD5 值
-        spark.destroy(); // 释放内存
+        // let md5 = spark.end(); // 计算文件的 MD5 值
+        let md5 = shaObj.getHash("HEX");
+        //spark.destroy(); // 释放内存
         resFile.md5Progress = 100; // 设置 MD5 计算进度为 100%
         resFile.status = STATUS.uploading.value; // 更新文件状态为上传中
         resFile.md5 = md5; // 存储文件的 MD5 值
@@ -261,23 +272,29 @@ const startUpload = (uid)=>{
   })
   uploadFile(uid,getFileUid(uid).chunkIndex)
   localStorage.setItem('filelist',JSON.stringify(filelist.value))
-  console.log('开始上传',uid)
+  // console.log('开始上传',uid)
 }
 //暂停上传
 const pauseUpload = (uid)=>{
   setFileValue(uid,{pause:true})
   localStorage.setItem('filelist',JSON.stringify(filelist.value))
-  console.log('暂停上传',uid)
+  // console.log('暂停上传',uid)
 }
+// 全部删除
+const delAllUpload = ()=>{
+  filelist.value = []
+  localStorage.setItem('filelist',JSON.stringify(filelist.value))
+}
+
 // 删除正在上传的任务
 const delUpload = (uid,index)=>{
-  console.log('删除正在上传的任务',uid,index)
+  // console.log('删除正在上传的任务',uid,index)
   filelist.value.splice(index,1)
   localStorage.setItem('filelist',JSON.stringify(filelist.value))
 }
 // 删除已经上传完成的任务
 const clearUpload = (uid,index)=>{
-  console.log('删除已经上传的任务',uid,index)
+  // console.log('删除已经上传的任务',uid,index)
   filelist.value.splice(index,1)
   localStorage.setItem('filelist',JSON.stringify(filelist.value))
 }
@@ -376,7 +393,7 @@ const uploadFile = async (uid, chunkIndex) => {
     let start = i * chunkSize;
     let end = start + chunkSize >= fileSize ? fileSize : start + chunkSize;
     let chunkFile = file.slice(start, end);
-    console.log(file)
+    // console.log(file)
     // 上传文件
     let uploadResult = await proxy.Request({
       url: api.upload,
@@ -438,7 +455,9 @@ const uploadFile = async (uid, chunkIndex) => {
     .tips {
       font-size: 13px;
       color: rgb(169, 169, 169);
+      margin-right: 55%;
     }
+    
   }
   .file-list {
     overflow: auto;

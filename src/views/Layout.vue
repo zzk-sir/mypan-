@@ -114,6 +114,7 @@
     </div>
     <UpdateAvatar ref="updateAvatarRef" @updateAvatar="reloadAvatar"></UpdateAvatar>
     <UpdatePassword ref="updatePasswordRef"></UpdatePassword>
+    
   </div>
 </template>
 <script setup>
@@ -133,7 +134,6 @@ import {
 import { useRouter, useRoute } from "vue-router";
 import md5 from "js-md5";
 import axios from "axios";
-import { compileScript } from "vue/compiler-sfc";
 //================================================================globolVar
 const router = useRouter();
 const route = useRoute();

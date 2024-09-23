@@ -210,13 +210,21 @@
         </el-form-item>
       </el-form>
     </Dialog>
+    <div class="footer">
+      <a
+        href="https://beian.mps.gov.cn/#/query/webSearch?code=13012502000079"
+        rel="noreferrer"
+        target="_blank"
+        >冀公网安备13012502000079</a
+      >
+    </div>
+    
   </div>
 </template>
 <script setup>
 import { ref, reactive, getCurrentInstance, nextTick, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import md5 from "js-md5";
-
 //================================================================globolVar
 const router = useRouter();
 const route = useRoute();
@@ -461,7 +469,7 @@ const doSubmit = () => {
       sessionStorage.setItem("authorization", res);
       // 重定向到原始页面
       const redirectUrl = route.query.redirectUrl || "/";
-      console.log(redirectUrl,route.query.redirectUrl)
+      console.log(redirectUrl, route.query.redirectUrl);
       router.push(redirectUrl);
     } else if (opType.value == 2) {
       // 重置密码
@@ -505,7 +513,18 @@ const sendEmailCode = (e) => {
   background: skyblue center center / cover no-repeat;
   background-size: 800px;
   display: flex;
+  .footer {
+    position: absolute;
+    align-self: end;
+    margin-bottom: 10px;
+    margin-left: 50%;
+    a {
+      color: aliceblue;
+      text-decoration: none;
+    }
+  }
   .bg {
+    z-index:9;
     flex: 1;
     background: url("../assets/login-bg0.png");
     background-position: center;
@@ -514,13 +533,18 @@ const sendEmailCode = (e) => {
     background-repeat: no-repeat;
   }
   .login-panel {
+    z-index:10;
     width: 430px;
     margin-right: 15%;
     align-self: center;
     .login-register {
+      z-index: 10;
+      background: linear-gradient(180deg, rgb(193, 221, 244) 0%, #ffffff 30.21%);
       padding: 25px;
-      background: #fff;
-      border-radius: 5px;
+      box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05),
+        0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1),
+        0px 0px 0px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
       .login-title {
         text-align: center;
         font-size: 18px;
