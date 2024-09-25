@@ -387,9 +387,6 @@ onMounted(async () => {
 // 获取用户信息
 const getUserInfo = async () => {
   const user = sessionStorage.getItem("user");
-  if (user != null && user) {
-    return;
-  }
   const res = await proxy.Request({
     url: api.getUserInfo,
     params: {},
@@ -398,6 +395,7 @@ const getUserInfo = async () => {
     return;
   }
   sessionStorage.setItem("user", JSON.stringify(res));
+  
 };
 // 退出
 const logout = () => {
@@ -426,6 +424,7 @@ watch(
   () => route,
   async (newVal, oldVal) => {
     await getUseSpace();
+    await getUserInfo();
     let user = sessionStorage.getItem("user");
     if (user != null && user) checkAdmin();
     if (newVal.meta.menuCode) {

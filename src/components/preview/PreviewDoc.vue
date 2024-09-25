@@ -53,7 +53,6 @@ const initDoc = async () => {
     responseType: "blob",
   });
   if (!result) return;
-  console.log(result)
   docx.renderAsync(result, docRef.value).catch(error=>{
     proxy.Message.error('目前只支持docx类型的文档，其他类型请下载后查看')
   })

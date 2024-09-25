@@ -471,7 +471,7 @@ const doSubmit = () => {
       const redirectUrl = route.query.redirectUrl || "/";
       console.log(redirectUrl, route.query.redirectUrl);
       router.push(redirectUrl);
-    } else if (opType.value == 2) {
+    } else if (optype.value == 2) {
       // 重置密码
       proxy.Message.success("密码重置成功");
       showPanel(1);
