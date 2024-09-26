@@ -6,6 +6,9 @@ import "element-plus/dist/index.css";
 // 图标
 import "@/assets/icon/iconfont.css";
 import "@/assets/base.scss";
+//  黏切板
+import useClipboard from 'vue-clipboard3';
+const { toClipboard } = useClipboard();
 // 引入localstorage
 import LocalStorage from "@/utils/LocalStorage";
 import Verify from "@/utils/Verify.js";
@@ -58,4 +61,5 @@ app.config.globalProperties.globalInfo = {
 	avatarUrl: "/api/getAvatar/",
 	imageUrl: "/api/file/getImage/",
 };
+app.config.globalProperties.toClipboard = toClipboard;
 app.mount("#app");

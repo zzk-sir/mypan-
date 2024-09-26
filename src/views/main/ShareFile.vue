@@ -160,9 +160,13 @@ const share = async () => {
     showCancel.value = false;
   });
 };
-const copy = async()=>{
-    await navigator.clipboard.writeText(`${shareUrl.value}${resultInfo.value.shareId} 提取码：${resultInfo.value.code}`);
-    proxy.Message.success("复制成功");
+const copy =async()=>{
+    await paoxy.toClipboard(`${shareUrl.value}${resultInfo.value.shareId} 提取码：${resultInfo.value.code}`)
+    .then(res=>{
+      proxy.Message.success("复制成功");
+    }).catch(error=>{
+      proxy.Message.error(`复制失败：${error}`);
+    })
 }
 </script>
 

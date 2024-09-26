@@ -187,11 +187,13 @@ const showOp = (row) => {
 const cancelShowOp = (data) => {
   data.showOp = false;
 };
-const copy = async (data) => {
-  await navigator.clipboard.writeText(
-    `${shareUrl.value}${data.shareId} 提取码：${data.code}`
-  );
-  proxy.Message.success("复制成功");
+const copy = async(data) => {
+    await proxy.toClipboard(`${shareUrl.value}${data.shareId} 提取码：${data.code}`)
+    .then((res)=>{
+      proxy.Message.success("复制成功");
+    }).catch(err=>{
+      proxy.Message.error(`复制失败：${err}`);
+    })
 };
 
 //----------------------------------watch

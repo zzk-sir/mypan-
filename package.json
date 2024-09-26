@@ -29,6 +29,7 @@
     "vue-cookies": "^1.8.3",
     "vue-pdf-embed": "^2.0.3",
     "vue-router": "^4.3.0",
+    "vue3-clipboard": "^1.0.0",
     "vue3-pdfjs": "^0.1.6",
     "xlsx": "^0.18.5"
   },
