@@ -7,7 +7,7 @@
       <h2>放入当前文件夹</h2>
     </div>
     <div class="header">
-      <div class="logo">
+      <div class="logo" @click="goHome">
         <span class="iconfont icon-pan"></span>
         <div class="name">My Pan</div>
       </div>
@@ -252,6 +252,10 @@ const jump = (data) => {
   }
   router.push(data.path);
 };
+const goHome = ()=>{
+  console.log("goHome")
+  router.push("/")
+}
 const setMenu = (menuCode, path) => {
   const menu = menus.value.find((item) => {
     return item.menuCode == menuCode;
