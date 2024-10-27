@@ -119,6 +119,7 @@
 
 <script setup>
 import { ref, reactive, getCurrentInstance,onMounted } from "vue";
+
 // import SparkMD5 from "spark-md5";
 import jsSHA from "jssha";
 
@@ -183,6 +184,19 @@ const delList = ref([]); //删除列表
 
 //================================================================methods
 //----------------------------------common
+// webworker异步操作
+const createWorker2getSHAstr = (arrayBuffer)=>{
+  return new Promise((res,rej)=>{
+    const worker = new Worker("/worker.js")
+    worker.onmessage = (e)=>{
+      res(e.data)
+      worker.terminate()
+    }
+    worker.onerror = rej
+    worker.postMessage(arrayBuffer)
+  })
+}
+
 // md5操作
 const computedMD5 = async (fileItem) => {
   let file = fileItem.file; // 获取文件对象
@@ -208,14 +222,16 @@ const computedMD5 = async (fileItem) => {
   };
 
   loadNext(); // 加载第一个分片
-
   return new Promise((resolve, reject) => {
     let resFile = getFileUid(file.uid); // 获取文件对象
     resFile.md5Progress = 0;
     // 文件读取成功时触发
-    fileReader.onload = (e) => {
-      //spark.append(e.target.result); // 将读取的文件数据添加到 SparkMD5 实例中
-      shaObj.update(new Int8Array(e.target.result).join(''))
+    fileReader.onload = async (e) => {
+      // spark.append(e.target.result); // 将读取的文件数据添加到 SparkMD5 实例中
+      // 使用webworker 异步处理生成sha
+      let str = await createWorker2getSHAstr(e.target.result)
+      shaObj.update(str)
+      
       currentChunk++;
 
       // 如果还有分片未读取完

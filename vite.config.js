@@ -17,8 +17,8 @@ export default defineConfig({
     hmr:true,
     proxy:{
       "/api":{
-        target:"http://106.54.15.252:7090",
-        // target:"http://localhost:7090",
+        // target:"http://106.54.15.252:7090",
+        target:"http://localhost:7090",
         changeOrigin:true,
         pathRewrite:{
           "^api":"/api"

@@ -17,6 +17,7 @@ import Request from "@/utils/Request.js";
 import Confirm from "@/utils/Confirm.js";
 import Utils from "@/utils/Utils.js";
 import IdbFileTool from "@/utils/IdbFileTool.js";
+
 // 初始化
 IdbFileTool.init();
 
