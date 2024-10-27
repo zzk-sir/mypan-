@@ -32,3 +32,4 @@ npm run build
 #### 修复
 - 使用sha3算法来生成hash，解决md5生成hash会出现重复的问题
 - 修复了前端参数修改导致布局变化的问题
+- 使用web-worker优化了sha3算法
